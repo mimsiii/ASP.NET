@@ -1,0 +1,32 @@
+﻿@model List<Animal>
+
+@if (Model == null || Model.Count == 0)
+{
+    <h2>No animals in the shelter.</h2>
+}
+else
+{
+    @foreach (var animal in Model)
+    {
+        <div class="animal-card">
+            <div onclick="getAnimal('@animal.Id')" class="row">
+                <div class="col-3", style="color:aliceblue; text-shadow:0 0 2px black">
+                    <b>Animal: @animal.AnimalKind</b>
+                </div>
+                <div class="col-3", style="color:aliceblue; text-shadow:0 0 2px black">
+                    <b>Have Breed: @animal.YesNoBreed</b>
+                </div>
+                <div class="col-3", style="color:aliceblue; text-shadow:0 0 2px black">
+                    <b>Date Brought: @animal.BringDate</b>
+                </div>
+            </div>
+        </div>
+        <hr />
+    }
+}
+
+<script>
+    const getAnimal = (id) => {
+        window.location = `/Home/GetAnimal/${id}`
+    }
+</script>

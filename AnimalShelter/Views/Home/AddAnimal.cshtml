@@ -1,0 +1,14 @@
+﻿@model Animal
+
+<form asp-controller="Home" asp-action="SaveAnimal">
+    <label asp-for="AnimalKind"></label>
+    <input class="form-control" asp-for="AnimalKind" />
+
+    <label asp-for="YesNoBreed"></label>
+    <input class="form-control" asp-for="YesNoBreed" />
+
+    <label asp-for="BringDate"></label>
+    <input class="form-control" asp-for="BringDate" />
+
+    <button class="btn btn-primary">Add animal</button>
+</form>
